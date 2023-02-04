@@ -1,0 +1,61 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    11/24/2022  21:49:42  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\7SEG1.obj TO .\Objects\7SEG1 PRINT (.\Listings\7SEG1.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7SEG1.obj (7SEG1)
+
+
+LINK MAP OF MODULE:  .\Objects\7SEG1 (7SEG1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     400BH     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7SEG1 (7SEG1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7SEG1
+  C:000FH         SYMBOL        DELAY
+  C:0013H         SYMBOL        LP1
+  C:0011H         SYMBOL        LP2
+  C:0015H         SYMBOL        LP3
+  C:0000H         SYMBOL        MAIN
+  D:00A0H         SYMBOL        P2
+  C:0003H         SYMBOL        REPEAT
+  C:0000H         LINE#         6
+  C:0003H         LINE#         7
+  C:0004H         LINE#         8
+  C:0005H         LINE#         9
+  C:0007H         LINE#         10
+  C:0009H         LINE#         11
+  C:000AH         LINE#         12
+  C:000DH         LINE#         13
+  C:000FH         LINE#         17
+  C:0011H         LINE#         18
+  C:0013H         LINE#         19
+  C:0015H         LINE#         20
+  C:0017H         LINE#         21
+  C:0019H         LINE#         22
+  C:001BH         LINE#         23
+  -------         ENDMOD        7SEG1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0027H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=16395
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

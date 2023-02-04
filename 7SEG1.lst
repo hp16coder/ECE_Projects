@@ -1,0 +1,57 @@
+A51 MACRO ASSEMBLER  7SEG1                                                                11/24/2022 21:49:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\7SEG1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE 7SEG1.asm SET(SMALL) DEBUG PRINT(.\Listings\7SEG1.lst) OBJECT(.\Objects
+                      \7SEG1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+4000                   1     ORG 4000H
+4000 3F065B4F          2     DB 3FH, 06H, 5BH, 4FH, 66H, 6DH, 7DH, 07H, 7FH, 6FH, 0
+4004 666D7D07                
+4008 7F6F00                  
+                       3     ; Lookup table for digits 0 to 9
+                       4     
+0000                   5     ORG 0000H
+0000 904000            6     main:   MOV DPTR, #4000H
+0003 E4                7     repeat: CLR A
+0004 93                8             MOVC A, @A+DPTR       ; Copy data from external location to accumulator
+0005 F5A0              9             MOV P2, A             ; Move the pattern of the digit into port P2
+0007 110F             10             ACALL delay           ; Call a delay to so that the transition is visible
+0009 A3               11             INC DPTR              ; Point to the next pattern
+000A B500F6           12             CJNE A, 0, repeat     ; Repeat till 0 (Stop bit) is received
+000D 80F1             13             SJMP main             ; Run this forever till externally stopped
+                      14     
+                      15     ; generate a decent enough delay between transitions
+000F                  16     delay: 
+000F 7808             17             MOV R0, #08H
+0011 79FF             18     LP2:    MOV R1, #0FFH
+0013 7AFF             19     LP1:    MOV R2, #0FFH
+0015 DAFE             20     LP3:    DJNZ R2, LP3 
+0017 D9FA             21             DJNZ R1, LP1
+0019 D8F6             22             DJNZ R0, LP2
+001B 22               23             RET
+                      24     END
+A51 MACRO ASSEMBLER  7SEG1                                                                11/24/2022 21:49:42 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY. . . . . . .  C ADDR   000FH   A   
+LP1. . . . . . . .  C ADDR   0013H   A   
+LP2. . . . . . . .  C ADDR   0011H   A   
+LP3. . . . . . . .  C ADDR   0015H   A   
+MAIN . . . . . . .  C ADDR   0000H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+REPEAT . . . . . .  C ADDR   0003H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
